@@ -1,0 +1,49 @@
+.sliceReviews {
+	padding: 1em 0;
+	
+	&-list {margin-top: 1.875em;}
+
+	&-preview {
+		padding: 1em 0;
+		border-top: 1px solid $grey-border;
+		
+		> div:first-of-type {display: flex;}
+		&:last-of-type {border-bottom: 1px solid $grey-border;}
+		> span {
+			display: flex;
+			flex-flow: row nowrap;
+		}
+		h2 {
+			margin: 0.5em 0;
+			font-family: $font2;
+			font-size: $font-16;
+			flex-grow: 2;
+		}
+		.note-btn {
+			padding: 0.4375em 0.75em;
+			border-radius: 6px;
+			font-weight: $font-bold;
+			color: $white;
+		}
+	}
+
+	.preview {
+		&-user {
+			font-size: $font-14;
+			color: $grey-text;
+			margin: 0.35em 0;
+		}
+		&-text {
+			font-size: $font-14;
+			margin: 0.25em 0 0.4em;
+		}
+	}
+
+	&-response {
+		border-left: 3px solid $grey-border;
+		padding: 0 1em;
+		margin: 2em 0 0;
+	}
+
+	.readMore-btn {font-size: $font-14;}
+}

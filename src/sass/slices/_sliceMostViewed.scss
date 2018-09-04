@@ -1,0 +1,38 @@
+.sliceMostViewed {
+	
+	&-list {
+		padding: 1em 0 4em;
+
+		a {display: flex;}
+	}
+	.item {
+
+		&-caption {padding-left: 1em;}
+		&-illustration {
+			display: flex;
+			margin: 0.5em 0;
+			img {
+				height: 88px;
+			}
+
+			@media screen and (min-width: $large) {
+				flex-direction: row-reverse;
+				.item-caption {
+					padding: 0 1em 0 0;
+				}
+			}
+		}
+		&-title {
+			font-family: $font2;
+			font-size: $font-16;
+			font-weight: $font-bold;
+			color: $black-text;
+			margin: 0;
+		}
+		&-publishDate {
+			font-size: $font-12;
+			color: $grey-text;
+			margin-top: 0.25em;
+		}
+	}
+}

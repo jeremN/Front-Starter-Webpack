@@ -1,0 +1,51 @@
+.swiper {
+	&-container {
+		&.no-swiper {
+			.btn-next,
+			.btn-prev {
+				opacity: 0;
+			}
+		}
+	}
+	&-slide {
+		z-index: 1;
+	}
+
+	&-button {
+		&-prev,
+		&-next {
+			background: $white;
+			border-radius: 50%;
+			width: 46px;
+			height: 46px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.2s ease-in;
+			z-index: 800;
+			&:before {
+				font-family: 'topfonts';
+				font-size: $font-24;				
+				color: $blue;
+			}
+			&:hover {
+				background: $blue;
+				&:before {
+					color: $white;
+				}
+			}
+		}
+		&-prev {
+			box-shadow: -2px 4px 4px 1px rgba($black, 0.5);
+			&:before {				
+				content: '\e802';
+			}
+		}
+		&-next {
+			box-shadow: 2px 4px 4px 1px rgba($black, 0.5);
+			&:before {
+				content: '\e801';
+			}
+		}
+	}
+}

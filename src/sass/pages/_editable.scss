@@ -1,0 +1,126 @@
+@keyframes pulse {
+	0% {opacity: 0.5;}
+	100% {opacity: 1;}
+}
+
+.editable {
+	
+	&-button {
+		display: flex;
+		justify-content: center;
+		cursor: pointer;
+		position: absolute;
+		top: -0.8125em;
+		right: -0.8125em;
+		width: 26px;
+		height: 26px;
+		border: 2px solid $grey-border;
+		background-color: $white;
+		color: $black;
+		transition: all 0.2s ease-in;
+
+		@media screen and (min-width: $xtra-large) {
+			opacity: 0;
+			transform: translate3d(0, -0.5em, 0);
+		}
+	}
+	&-block {
+		border: 2px dashed $grey-border;
+		padding: 0.5em;
+		position: relative;
+		transition: all 0.2s ease-in;
+		&:hover {
+			border-color: $blue;
+
+			.editable-button {
+				border-color: $blue;
+
+				@media screen and (min-width: $xtra-large) {
+					opacity: 1;
+					transform: translate3d(0,0,0);
+				}
+			}
+		}
+		&.sliceReviews-preview,
+		&.sliceOtherOffers-link {
+			margin: 1.5em 0;
+
+			&:last-of-type {
+				border-bottom: 2px dashed $grey-border;
+				&:hover {border-color: $blue;}
+			}
+		}
+
+		&.sliceOtherOffers-link {
+			border-top: 2px dashed $grey-border;
+			&:hover{border-color: $blue;}
+		}
+	}
+	&-add {
+		position: relative;
+
+		.editable-button {
+			position: relative;
+			top: 0;
+			right: 0;
+			float: right;
+			opacity: 1;
+			color: $blue;
+			&:hover {border-color: $blue;}
+
+			@media screen and (min-width: $xtra-large) {
+				transform: translate3d(0,0,0);
+			}
+
+		}
+	}
+	&-menu-inline {
+		position: absolute;
+		top: -0.8125em;
+		right: -0.8125em;
+		display: flex;
+
+		.editable-button {
+			position: relative;
+			top: 0;
+			right: 0;
+			&:last-child {margin-left: 0.25em;}
+		}
+	}
+	.sliceCompanyCard {
+		margin-top: 2.5em;
+		&-panel {margin-top: 0;}
+	}
+	.sliceOtherOffers {padding-top: 0.9em;}
+}
+
+.empty {
+	&-placeholder {
+		padding: 0.5em;
+		margin: 0.5em 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	&-line {
+		background-color: $grey-border;
+		margin: 0.35em 0;
+		height: 0.625em;
+		border-radius: 0.5em;
+		//animation: pulse 1s infinite alternate;
+
+		&-small {width: 25%;}
+		&-medium {width: 50%;}
+		&-large {width: 75%;}
+		&-full {width: 100%;} 
+		&-space {
+			width: 100%;
+			background: none;
+		}
+	}
+	&-pill {
+		background-color: $grey-border;
+		height: 1.8125em;
+		width: 2.6875em;
+	}
+}

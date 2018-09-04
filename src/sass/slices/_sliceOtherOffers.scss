@@ -1,0 +1,61 @@
+.sliceOtherOffers {
+
+	.pill {
+		@extend %noteBtn;
+		@media screen and (min-width: 520px) {
+			margin-bottom: 1em;
+			font-size: $font-14;
+
+			.page-company & {font-size: $font-12;}
+		}
+	}
+
+	&-list {
+		margin: 1.5em 0 5em;
+
+		@media screen and (min-width: $large) {
+			width: 66.667%;
+		}
+	}
+	&-link {
+		display: flex;
+		align-items: center;
+		padding: 0.25em 0;
+		margin: 0.5em auto;
+		border-bottom: 1px solid $grey-border;
+
+		&:first-child {
+			border-top: 1px solid $grey-border;
+		}
+
+		@media screen and (min-width: 520px) {
+			justify-content: space-between;
+		}
+	}
+	&-location {
+		font-size: $font-14;
+		span {
+			color: $grey-text;
+			text-transform: uppercase;
+			&.location-min {text-transform: initial;}
+			.page-company & {font-size: $font-12;}
+		}
+	}
+
+	.colLeft {
+		padding-right: 0.5em; 
+		flex-grow: 2;
+
+		h3 {
+			font-size: $font-20;
+			font-family: $font2;
+			margin: 0.25em 0 0.5em;
+
+			.page-company & {font-size: $font-16;}
+		}
+		a {
+			font-size: $font-14;
+			color: $blue;
+		}
+	}
+}

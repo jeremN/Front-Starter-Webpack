@@ -1,0 +1,17 @@
+.sliceBtnMore  {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 50px 0;
+
+	.btn {
+		box-shadow: 0 2px 1px $purple;
+		font-family: $font2;
+		font-size: $font-12;
+		cursor: pointer;
+	}
+	@media screen and (min-width: $medium) {
+		justify-content: center;
+
+		.btn {max-width: 320px;}
+	}
+}

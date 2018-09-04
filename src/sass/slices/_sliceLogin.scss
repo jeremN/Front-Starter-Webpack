@@ -1,0 +1,22 @@
+.sliceLogin {
+	display: flex;
+	justify-content: center;
+
+	&-form {
+		max-width: 445px;
+		@media screen and (min-width: $medium) {
+			margin-top: 150px;
+		}
+	}
+
+	.form {
+		&-panelHeader {
+			padding-bottom: 50px;
+		}
+		&-group {
+			&-inline {
+				margin-top: 60px;
+			}
+		}
+	}
+}

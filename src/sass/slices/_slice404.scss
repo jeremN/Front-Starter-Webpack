@@ -1,0 +1,40 @@
+.slice404 {
+	padding-bottom: 0;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.leftCol {
+		text-align: center;
+
+		.sliceHeading-subtitle {
+			margin-top: 1.5em;
+			font-family: $font2;
+			font-size: $font-16;
+			font-style: normal;
+		}
+		margin-bottom: 2em;
+		a {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+	.rightCol {
+		display: flex;
+	}
+
+	@media screen and (min-width: $large) {
+		.wrapper { 
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+		}
+
+		.leftCol {
+			padding: 5em 0 0 8.334%;
+			width: 60%;
+			text-align: left;
+		}
+	}
+}

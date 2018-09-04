@@ -1,0 +1,25 @@
+.sliceJobDetails {
+	padding: 1.5em 0;
+
+	.pill {
+		@extend %noteBtn;
+		font-size: $font-14;
+		display: inline-block;
+	}
+	&-offer {
+		display: flex;
+		flex-direction: column;
+	}
+	.offer {
+
+		&-text {
+			margin: 1.25em 0 0;
+			
+			+ ul {
+				margin: 0.25em 0 1em;	
+			}
+		}
+		&-list {padding-left: 1em;}
+	}
+
+}

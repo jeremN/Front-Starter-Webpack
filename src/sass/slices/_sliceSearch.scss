@@ -1,0 +1,138 @@
+.sliceSearch {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba($black, 0.5);
+	height: 100%;
+	width: 100%;
+	z-index: 995;
+	padding: 0 1em;
+	&.js-hide {
+		display: none;
+		> .form-group {
+			opacity: 0;
+			transform: translate3d(0, 35%, 0);
+		}
+	}
+	&.js-open {
+		> .form-group {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);		
+		}
+	}
+	.form {
+		&-block {
+			@extend .wrapper;
+			margin-top: 1em;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			background-color: $white;
+			padding: 0;
+		}
+		&-group.searchInput {
+			display: flex;
+			padding: 15px;
+			margin: 0;
+			position: relative;
+			transition: all 0.2s cubic-bezier(0.77,0.2,0.05,1.0) 0.35s;
+
+			&:before {
+				font-family: "topfonts";
+				content: '\e800';
+				display: block;
+				color: $grey-border;
+				position: absolute;
+				top: 1.25rem;
+				left: 20px;
+				font-size: $font-20;
+			}
+
+			input {
+				margin-right: 5px;
+				padding-left: 28px;
+				border: none;
+				height: 44px;
+			}
+
+			.btn {
+				position: absolute;
+				cursor: pointer;
+				padding: 0;
+				margin: 0;
+				right: 20px;
+				top: 1.25rem;
+			}
+		}
+	}
+
+	&-filters,
+	&-autocompletion {
+		border-top: 1px solid $grey-border;
+		background-color: $white;
+		width: 100%;
+	}
+	&-autocompletion {
+		height: 100%;
+		max-height: 480px;
+		overflow-y: scroll;
+
+		> * {
+			color: $black-text;
+		}
+		.autocompletion-resultLength {
+			padding:0 30px;
+			font-weight: $font-bold;
+
+			span {
+				&.sep {
+					margin: 0 0.5em;
+				}
+			}
+		}
+		ul {
+			margin-bottom: 1em;
+
+			li{
+				padding: 5px 30px;
+				&:hover {
+					background-color: $input-border;
+				}
+			}
+		}
+	}
+
+	&-filters {
+		padding: 0 30px;
+		fieldset {
+			@media screen and (max-width: $large) {
+				display: none;
+			}
+			padding: 10px 0 0;
+			margin: 0;
+			> div {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.form-legend {
+				padding: 0;
+			}
+			.form-box {
+				width: 90%;
+			}
+		}
+	}
+
+	.mobile-filters {
+		padding: 1em 0;
+		display: flex;
+		align-items: flex-start;
+
+		@media screen and (min-width: $large) {
+			display: none;
+		}
+	}
+}

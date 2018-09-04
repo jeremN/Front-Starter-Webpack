@@ -1,0 +1,66 @@
+.sliceJobOffers {
+
+	.sliceHeading {
+		&-title {color: $white;}
+		i {color: $blue;}
+	}
+
+	.swiper {
+		&-container {
+			width: 100%;
+			height: 100%;
+		}
+		&-wrapper {display: flex;}
+	}
+
+	&-slide {
+		background-color: $white;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		margin: 0 0.625em;
+		padding: 0.625em 0.625em 1.25em;
+
+			max-width: 48%;
+			@media screen and (min-width: $medium) {
+				max-width: 31%;
+			}
+
+			@media screen and (min-width: $large) {
+				max-width: 23%;
+			}
+		.no-swiper & {
+		}
+	}
+
+	.slide {
+		&-tags {
+			text-transform: uppercase;
+			color: $grey-text;
+			font-size: $font-12;
+			i {
+				color: $black-text;
+				font-size: $font-16;
+			}
+		}
+		&-title {
+			font-family: $font2;
+			font-size: $font-16;
+			color: $black-text;
+			text-align: center;
+			margin: 0.25em 0;
+		}
+		&-companyName {
+			color: $black-text;
+			font-size: $font-14;
+		}
+		&-rating {
+			display: flex;
+			flex-flow: row nowrap;
+			.star {
+				&-empty {color: $grey-border;}
+			}
+			.review {font-size: $font-12;}
+		}
+	}
+}

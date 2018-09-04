@@ -1,0 +1,163 @@
+.sliceArticleDetails {
+	margin-top: -46px;
+	
+	.sliceHero-article {
+		background: url('http://via.placeholder.com/1920x424') no-repeat;
+		background-size: cover;
+		background-position: center;
+		height: 40vh;
+		min-height: 213px;
+		max-height: 424px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1.5em;
+	}
+	&-grid {
+		@extend .wrapper;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.article {
+		&-theme {
+			color: $turquoise;
+			font-family: $font2;
+			text-transform: uppercase;
+			margin: 0;
+		}
+		&-title {
+			color: $white;
+			font-family: $font2;
+			margin: 0.5em auto;
+			text-align: center;
+			i {color: $turquoise;}
+		}
+		&-date {
+			font-family: $font2;
+			font-size: $font-18;
+			color: $white;
+		}
+		&-textRow {
+			margin: 2em auto;
+
+			p {
+				&:first-letter {text-transform: capitalize;}
+			}
+		}
+
+		&-imgRow {
+			margin: 0.5em auto;
+		}
+		&-shareLinks {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			i {font-size: $font-24;}
+			li {
+				width: 25%;
+				padding: 0.25em;
+				margin: 0 0.5em;
+				border-radius: 2em;
+				text-align: center;
+				transition: all 0.2s ease-in;
+				a {display: block;}
+				&:hover {
+					border-width: 1px;
+					border-style: solid;
+					background: transparent;
+				}
+			}
+		}
+		&-textTitle {
+			font-family: $font2;
+			font-size: $font-18;
+			color: $black-text;
+		}
+		&-name { color: $black-text;}
+		&-themeLinks {display: none;}
+		&-tags {
+			.tag-item {@extend %tagItem;}
+		}
+
+	}
+	.link {
+
+		&-facebook {
+			background-color: $facebook-color;
+			&:hover {
+				border-color: $facebook-color;
+				a {color: $facebook-color;}
+			}
+		}
+		&-linkedin {
+			background-color: $linkedin-color;
+			&:hover {
+				border-color: $linkedin-color;
+				a {color: $linkedin-color;}
+			}
+		}
+		&-twitter {
+			background-color: $twitter-color;
+			&:hover {
+				border-color: $twitter-color;
+				a {color: $twitter-color;}
+			}
+		}
+		&-email {
+			background-color: $black;
+			&:hover {
+				border-color: $black;
+				a {color: $black;}
+			}
+		}
+	}
+
+	@media screen and (min-width: $large) {
+			
+		&-grid {flex-direction: row;}
+
+		.article {
+
+			&-shareLinks {	
+				flex-direction: column;
+				justify-content: flex-start;
+				margin-top: 1.5em;
+				li {
+					width: 40px;
+					height: 40px;
+					margin: 0.5em;
+				}
+				i {font-size: $font-20;}
+			}
+			&-content {
+				padding-left: 1em;
+				padding-right: 8.334%;
+			}
+		}
+	}
+
+	@media screen and (min-width: $xtra-large) {
+
+		.article {
+
+			&-themeLinks {
+				display: block;
+				margin-top: 1.5em;
+				font-family: $font2;
+				ul {
+					display: flex;
+					flex-direction: column;
+				}
+				li {margin: 0.5em auto 0.75em;}
+				.article-theme {
+					display: flex;
+					margin-bottom: 0.25em;
+				}
+				.article-name {font-weight: $font-bold;}
+			}
+			&-content {padding-right: 1em;}
+		}
+	}
+}

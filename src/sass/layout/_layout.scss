@@ -1,0 +1,103 @@
+.page {
+	&-home {@extend .wrapper;}
+	&-articles-summary,
+	&-home,
+	&-job-details,
+	&-company {
+
+		&.grid-col-2 {
+			display: grid;
+			grid-template-columns: 100%;
+		}
+		&.column-reverse {
+
+			@media screen and (max-width: 767px) {
+
+				> * {
+					&:first-child {grid-row: 2;}
+					&:last-child {grid-row: 1;}
+				}
+			}
+		}
+	}
+
+	&-company {
+		&-column {
+			padding: 1.5em 0;
+
+			+ .sliceCompanyCard {
+
+				> .sliceBtnMore {margin-top: 0.5em;}
+			}
+		}
+
+		.sliceOtherOffers {
+			padding: 2.5em 0 1.5em;
+
+			&-list {
+				margin-right: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	&-job-details {
+		.sliceCompanyCard {
+			&-panel {
+				margin-top: 1em;
+			}
+		}
+	}
+}
+
+.sr-only {@include sr-only;}
+
+@media screen and (min-width: $small) {
+
+	.wrapper { max-width: 540px}
+}
+
+@media screen and (min-width: $medium) {
+
+	.wrapper { max-width: 720px;}
+
+	.page {
+		&-job-details,
+		&-company {
+			&.grid-col-2 {
+				grid-template-columns: calc(66.667% - 0.9375em) calc(33.334% - 0.9375em);
+				grid-column-gap: 1.875em;
+				column-gap: 1.875em;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $large) {
+
+	.wrapper { max-width: 960px;}
+
+	.page {
+		&-articles-summary {
+
+			&.grid-col-2 {
+				grid-template-columns: calc(66.667% - 0.9375em) calc(33.334% - 0.9375em);
+				grid-column-gap: 1.875em;
+				column-gap: 1.875em;
+			} 
+		}
+		&-home {
+			
+			&.grid-col-2 {
+				grid-template-columns: calc(58.334% - 0.9375em) calc(41.667% - 0.9375em);
+				grid-column-gap: 1.875em;
+				column-gap: 1.875em;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $xtra-large) {
+
+	.wrapper {max-width: 1140px;}
+}

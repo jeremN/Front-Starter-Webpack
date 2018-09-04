@@ -1,0 +1,32 @@
+.sliceMentionsLegales { 
+
+	&-article {
+		padding: 0.25em 0;
+		&:first-of-type {
+			padding-top: 1.5em;	
+		}
+	}
+
+	.article {
+		&-title {
+			font-family: $font2;
+			font-size: $font-16;
+			color: $purple;
+			margin-bottom: 0.25em;
+		}
+		&-description {
+
+		}
+	}
+
+	@media screen and (min-width: $large) {
+		.wrapper {
+			padding: 1em 8.334%;
+		}
+	}
+	@media screen and (min-width: $xtra-large) {
+		.wrapper {
+			padding: 1em 10%;
+		}
+	}
+}

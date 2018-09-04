@@ -1,0 +1,82 @@
+.sliceCompanyHistoric {
+	
+	h3 {
+		font-size: $font-16;
+		font-family: $font2;
+		color: $purple;
+		margin: 0.25em 0;
+	}
+
+	&-row {
+		margin-bottom: 1em;
+	}
+
+	.graph {
+		&-filter {
+			font-size: $font-14;
+			margin: 0 0 0.15em;
+		}
+		&-resume {
+			font-size: $font-14;
+			span {
+				font-weight: $font-bold;
+			}
+		}
+	}
+
+	&-lists {
+		display: flex;
+
+		@media screen and (max-width: 519px) {
+			flex-direction: column;
+		}
+
+		@media screen and (min-width: $large) {
+			justify-content: space-between;
+
+			> ul { width: 40%;}
+		}
+	}
+
+	&-list {
+		
+		@media screen and (min-width: 520px) {
+
+			+ ul { 
+				margin-left: 1em;
+			}
+		}
+
+		li {
+			margin: 1em 0;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&-graphics {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@media screen and (min-width: $large) {
+
+			flex-direction: row;
+		}
+	}
+	&-graph {
+		@extend .sliceGraph-wrap;
+		height: 350px;
+		width: 100%;
+		margin: 1em 0;
+
+		@media screen and (min-width: $large) {
+			width: 48%;
+		}
+
+		&-container {
+			position: relative;
+			width: 100%;
+		}
+	}
+}

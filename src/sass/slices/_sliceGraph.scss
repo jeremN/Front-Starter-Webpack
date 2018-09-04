@@ -1,0 +1,144 @@
+.sliceGraph {
+	padding: 1em 0;
+
+	&:last-child:not(.rightCol) {margin-bottom: 5em;}
+	.modebar {display: none !important;}
+
+	.sliceHeading {
+		i { 
+			font-family: $font2;
+			font-size: $font-24;
+			font-weight: $font-bold;
+			font-style: normal;
+			margin-right: 0.25em;
+		}
+	}
+
+	.form {
+		&-radio-btn {
+			margin-top: 0;
+			
+			label {
+				border: 1px solid $grey-border;
+				background-color: $white;
+				color: $blue;
+				box-shadow: none;
+				padding: 1em;
+				margin: 0 0.5em;
+			}
+			input {
+				&:checked {
+					+ label {
+						background-color: $blue;
+						color: $white;
+					}
+				}
+			}
+		}
+		&-label {
+			font-size: $font-12;
+			color: $grey-text;
+		}
+		&-group {padding: 0.25em;}
+	}
+
+	&-graph {
+		width: 100%;
+		height: 100%;
+
+		canvas {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&-wrap {
+		position: relative;
+		border: 1px solid $grey-border;
+		padding: 1em;
+		box-shadow: 0 6px 4px -4px rgba($black, 0.2);
+	}
+
+	&-legend {padding: 0 0.5em;}
+
+	&-list {
+		display: flex;
+		padding: 0.25em;
+
+		li {font-size: $font-14;}
+		&.criterion {
+			position: relative;
+			flex-wrap: wrap;
+
+			li {
+				display: flex;
+				align-items: center;
+				margin: 1em 0.5em;
+			}
+		}
+	}
+	&-criterion {
+		@media screen and (min-width: $medium) {
+			margin-top: 0.5em;
+		}
+
+		p {
+			font-size: $font-12;
+			font-weight: $font-bold;
+			color: $grey-text;
+			margin: 0 0 0 0.25em;
+		}
+	}
+	&-bar {
+		width: 1em;
+		height: 4px;
+		margin-right: 0.25em;
+	}
+	&-row {
+		width: 100%;
+
+		&[data-graphType] {height: 350px;}
+		&[data-graphType="chloropeth"] {height: 100%;}
+
+		@media screen and (min-width: $medium) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 0.5em;
+		}
+	}
+
+	&-filters {
+
+		legend {
+			margin-left: 0.15em;
+			padding-top: 0.5em;
+		}
+		select {
+			font-size: $font-14;
+			color: $blue;
+			border-radius: 0.25em;
+		}
+	}
+
+	&-col2 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		& > .sliceGraph, & > div {
+			width: 100%;
+		}
+		@media screen and (min-width: $large) {
+			flex-direction: row;
+
+			& > .sliceGraph {
+				width: 48%;
+
+				&.leftCol {margin-right: 4%;}
+				&-graph-chloropeth {width: 80%;}
+				&-legend {width: 15%;}
+			}
+		}
+	}
+}

@@ -1,0 +1,174 @@
+.sliceRanking {
+	@extend .wrapper;
+	display: flex;
+	flex-flow: column nowrap;
+
+	ol {
+		list-style: none;
+		padding: 0;
+		margin: 1em 0;
+	}
+
+	.topTen-item {
+		padding: 0.625em 0;
+		border-top: 1px solid $grey-border;
+		&:last-of-type {border-bottom: 1px solid $grey-border;}
+		&.isHidden { display: none;}
+	}
+
+	.item {
+
+		&-info {
+			color: $black;
+			display: flex;
+			flex-flow: row nowrap;
+			position: relative;
+			> * {margin: 0 5px;}
+			@media screen and (min-width: $large) {
+				> * {
+					margin: 0 5px 0 10px;
+				}
+			}
+		}
+		&-fiveStars {	
+			padding-top: 5px;
+			@media screen and (max-width: 519px) {
+				position: absolute;
+				right: 20%;				
+			}
+		}
+		&-note {
+
+			.note-gain {
+				font-size: $font-12;
+				font-family: $font2;
+				margin-top: 5px;
+				text-align: center;
+			}
+			.note-btn {
+				@extend %noteBtn;
+			}
+		}
+	}
+
+	.info {
+		
+		&-position {
+			margin-left: 0;
+			padding-top: 5px;
+			font-family: $font2;
+			font-weight: $font-bold;
+		}
+		&-companyDetails {
+			padding-top: 5px;
+			@media screen and (min-width: $medium) {
+				flex-grow: 2;
+			}
+		
+			.company-adress {
+				p {
+					margin: 0;
+					&:first-of-type {
+						@media screen and (max-width: 519px) {
+							max-width: 160px;
+						}
+					}
+					&:nth-child(2) {
+						color: $grey-text;
+						font-size: $font-14;
+						span {text-transform: uppercase;}
+					}
+				}
+				strong {
+					color: $black;
+					font-size: $font-16;
+					font-family: $font2;
+				}
+			}
+		}
+		&-companyLogo {padding-top: 5px;}
+		&-review {
+			font-size: $font-14;
+			margin: 0.25em 0;
+		}
+	}
+
+	&-table {
+		font-size: $font-14;
+
+		thead {
+			@extend .background-turquoise;
+			color: $white;
+			font-family: $font2;
+			font-weight: $font-bold;
+			th {
+				border: none;
+				&:nth-child(3) {text-transform: uppercase;}
+				@media screen and (min-width: $xtra-large) {
+					text-transform: uppercase;
+				}
+			}
+		}
+		
+		.item {
+			&-companyDetails {
+				a {
+					font-family: $font2;
+					font-size: $font-16;
+					font-weight: $font-bold;
+					color: $black;
+					margin-right: 0.625em;
+				}
+				span {
+					color: $grey-text;
+					&:first-of-type {
+						text-transform: uppercase;
+					}
+				}
+			}
+			&-note {
+				span, .note-btn, .note-gain {
+					display: inline-block;
+				}
+				.note-btn {
+					margin: 0 5px;
+				}
+			}
+			&-fiveStars {
+				padding: 0;
+				i {
+					@media screen and (max-width: 1199px) {
+						&:before {width: 0.75em;}
+					}
+				}
+			}
+			&-size, &-offers { 
+				color: $grey-text;
+				text-align: center;
+			}
+			&-reviews a { color: currentColor;}
+		}
+
+		@media screen and (max-width: 519px) {
+			.item-companyDetails span, 
+			.item-note .note-gain, 
+			.item-note .item-fiveStars{
+				display: none;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			.item {
+				&-fiveStars {
+					position: relative;
+					right: auto;
+					margin-bottom: 5px;
+				}
+				&-companyDetails { 
+					a {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
