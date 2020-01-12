@@ -8,6 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const multi = require('multi-loader')
 require('babel-polyfill')
 
+const PUBLIC_PATH = path.resolve(__dirname, 'dist')
 const devMode = process.env.NODE_ENV !== 'production'
 const config = require('./src/templates/config.json')
 
@@ -15,7 +16,7 @@ module.exports = {
 	entry: ['babel-polyfill', './src/scripts/main.js'],
 	output: {
 		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist')
+		path: PUBLIC_PATH
 	},
 	module: {
 		rules: [
