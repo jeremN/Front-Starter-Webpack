@@ -1,10 +1,3 @@
 {
   "title": "Hello",
-  "foo": "bar",
-  "menu": [
-    {"url": "topFrance.html", "name": "Top France"},
-    {"url": "barometer.html", "name": "Baromètre"},
-    {"url": "register.html", "name": "Inscription"},
-    {"url": "login.html", "name": "Se connecter"}
-  ]
 }

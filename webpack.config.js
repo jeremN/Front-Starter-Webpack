@@ -1,10 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
 const ImageMinWebpackPlugin = require('imagemin-webpack-plugin').default
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const multi = require('multi-loader')
 require('babel-polyfill')
 
@@ -98,7 +99,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new CleanWebpackPlugin('dist/'),
+		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'Accueil',
 			filename: 'index.html',
